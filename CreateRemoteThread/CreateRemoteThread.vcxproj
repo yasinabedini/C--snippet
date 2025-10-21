@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{c1e1a36f-6f0b-4c43-a3e8-ef9fb39405d7}</ProjectGuid>
-    <RootNamespace>Csnippet</RootNamespace>
+    <ProjectGuid>{a482a70d-ed1a-4af3-828c-bb9b3c026418}</ProjectGuid>
+    <RootNamespace>CreateRemoteThread</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -123,10 +123,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="CreateProcess.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="CreateProcess.h" />
+    <ClCompile Include="CreateRemoteThread.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
